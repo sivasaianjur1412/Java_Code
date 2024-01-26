@@ -7,7 +7,9 @@ public class LargestAndSmallest {
      * @param arr
      * @return
      */
-    static int[] findingMinAndMax(int[] arr) {
+    public int[] findingMinAndMax(int[] arr) {
+        if(arr.length == 0)
+            return new int[]{0, 0};
         int minimum = arr[0], maximum = arr[0];
         for (int i : arr) {
             if (i > maximum)
@@ -16,11 +18,5 @@ public class LargestAndSmallest {
                 minimum = i;
         }
         return new int[]{minimum, maximum};
-    }
-    public static void main(String[] args) {
-        int[] arr = {77, 12, 47, 20, 92, 75};
-        int[] minAndMax = findingMinAndMax(arr);
-        for(int i : minAndMax)
-            System.out.print(i + ", ");
     }
 }

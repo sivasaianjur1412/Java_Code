@@ -49,4 +49,35 @@ public class StudentDataTest {
         Assert.assertEquals(3, students.size());
     }
 
+    /***
+     * Success case
+     *
+     */
+    @Test
+    public void testStudentDataByNameSuccess() {
+        Student student = studentData.getStudentData("Sai");
+        Assert.assertNotNull(student);
+        Assert.assertEquals(3.7, student.getGpa(), 0.01);
+    }
+
+    /***
+     * Failure Case
+     * Check by giving wrong input.
+     */
+    @Test
+    public void testStudentDataByNameFailure() {
+        Student student = studentData.getStudentData("Siva");
+        Assert.assertNull(student);
+    }
+
+    /***
+     * Edge case
+     * Checking by giving the input as null;
+     */
+    @Test
+    public void testStudentDataByNameEdgeCase() {
+        Student student = studentData.getStudentData(null);
+        Assert.assertNull(student);
+    }
+
 }
