@@ -8,8 +8,9 @@ import java.util.Set;
 public class SetOperations {
     public Set<String> getDataUsingForLoop(HashSet<String> hashSet) {
         Set<String> stringSet = new HashSet<>();
-        for(String string : hashSet)
-            stringSet.add(string);
+        String[] array = hashSet.toArray(new String[0]);
+        for(int i = 0; i < array.length; i++)
+            stringSet.add(array[i]);
         return stringSet;
     }
 
