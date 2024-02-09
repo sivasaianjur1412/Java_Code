@@ -7,7 +7,7 @@ public class IntegerFilter {
     public List<Integer> getFilteredIntegers(List<Integer> integerList) {
         return integerList.stream()
                 .filter(integer -> integer % 2 == 0)
-                .map(integer -> integer * integer)
+                .map(integer -> integer + integer)
                 .collect(Collectors.toList());
     }
 }

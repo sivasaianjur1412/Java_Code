@@ -9,6 +9,6 @@ public class NaturalSortingTest {
     NaturalSorting naturalSorting = new NaturalSorting();
     @Test
     public void testNaturalSuccess() {
-        Assert.assertEquals("siva", naturalSorting.getMaximumElement(List.of("siva", "sai", "anjuri")));
+        Assert.assertEquals("siva", naturalSorting.getMaximumElement(List.of("siva", "sai", "anjuram")));
     }
 }
