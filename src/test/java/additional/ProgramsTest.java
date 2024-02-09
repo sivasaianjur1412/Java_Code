@@ -3,10 +3,7 @@ package additional;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ProgramsTest {
     Programs programs = new Programs();
@@ -118,6 +115,15 @@ public class ProgramsTest {
         hashMap.put(1, "Sai");
         hashMap.put(3, "A");
         return hashMap;
+    }
+
+    /***
+     * Get the repeated digits tests
+     */
+    @Test
+    public void testGetRepeatedDigits() {
+        Assert.assertEquals(List.of(1, 3, 6, 7), programs.getRepeatedDigits(1173356267));
+        Assert.assertNull(programs.getRepeatedDigits(-131));
     }
 
 }

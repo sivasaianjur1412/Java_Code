@@ -1,9 +1,6 @@
 package additional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Programs {
 
@@ -170,5 +167,35 @@ public class Programs {
         }
         return outputString.toString();
     }
+
+    /***
+     * Getting the repeated Digits of a number
+     * Used hashmap for lesser complexity.
+     * Time complexity will be O(n log n)
+     * @param numberInput
+     * @return
+     */
+    public ArrayList<Integer> getRepeatedDigits(int numberInput) {
+        Map<Integer, Integer> digitToRepeatedMap = new HashMap<>();
+        ArrayList<Integer> repeatedDigitsList = new ArrayList<>();
+        if(numberInput <= 0)
+            return null;
+        int count = 0;
+        while(numberInput > 0) {
+            count = 1;
+            int digit = numberInput % 10;
+            if(digitToRepeatedMap.containsKey(digit))
+                digitToRepeatedMap.put(digit, count+1);
+            else
+                digitToRepeatedMap.put(digit, count);
+            numberInput /= 10;
+        }
+        for(Map.Entry<Integer, Integer> keyEntry : digitToRepeatedMap.entrySet()) {
+            if(keyEntry.getValue() > 1)
+                repeatedDigitsList.add(keyEntry.getKey());
+        }
+        return repeatedDigitsList;
+    }
+
 
 }
